@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>焰牛排館 FLAME STEAKHOUSE | 新北鶯歌高品質炙燒牛排首選</title>
+  <meta name="description" content="焰牛排館位於新北市鶯歌區，嚴選優質原塊肉品與專業高溫火烤技術，提供炙烤沙朗、厚切菲力、香煎豬排等美味餐點與舒適用餐環境。立即線上預約！">
+  <meta name="keywords" content="焰牛排館, 鶯歌牛排, 新北美食, 炙燒牛排, 菲力牛排, 沙朗牛排, 排餐推薦, 約會聚餐">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            flame: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            },
+            amberGold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            },
+            charcoal: {
+              800: '#1e1b18',
+              850: '#171412',
+              900: '#110f0d',
+              950: '#0a0908',
+            },
+            wood: {
+              700: '#452b1e',
+              800: '#321f15',
+              900: '#23150e',
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'Georgia', 'serif'],
+            sans: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
+            brand: ['Cinzel', '"Noto Serif TC"', 'serif'],
+          },
+          boxShadow: {
+            'flame': '0 0 25px -5px rgba(234, 88, 12, 0.45)',
+            'flame-lg': '0 0 40px -5px rgba(249, 115, 22, 0.55)',
+            'gold': '0 0 20px -3px rgba(245, 158, 11, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Flame & Glow Effects */
+    .bg-wood-grain {
+      background-color: #110f0d;
+      background-image: radial-gradient(circle at 50% 0%, rgba(234, 88, 12, 0.18) 0%, transparent 65%),
+                        radial-gradient(circle at 85% 60%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+                        linear-gradient(to bottom, #110f0d 0%, #171412 50%, #0a0908 100%);
+    }
+
+    .flame-gradient-text {
+      background: linear-gradient(135deg, #fed7aa 0%, #fb923c 45%, #f59e0b 80%, #ea580c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 60%, #b45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Subtle Fire Embers Animation */
+    @keyframes emberRise {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-120px) scale(1.2); opacity: 0; }
+    }
+
+    .ember-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fb923c;
+      border-radius: 50%;
+      filter: blur(1px);
+      box-shadow: 0 0 6px #ea580c;
+      animation: emberRise 4s infinite linear;
+    }
+
+    /* Modal Backdrop Blur */
+    .modal-backdrop {
+      backdrop-filter: blur(8px);
+    }
+
+    /* Hide scrollbar for category tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-charcoal-950 text-stone-200 font-sans antialiased selection:bg-flame-600 selection:text-white">
+
+  <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
+  <div class="bg-gradient-to-r from-wood-900 via-flame-900 to-wood-900 border-b border-flame-800/40 text-xs py-2 px-4 text-center text-flame-200 flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-flame-600/40 text-amberGold-400 border border-flame-500/30">
+      🔥 鶯歌中正四路旗艦店
+    </span>
+    <span>「焰火炙燒好滋味，一口牛排，滿滿幸福。」即日起開放 30 天內線上預約！</span>
+    <a href="#reservation" class="underline hover:text-white font-medium ml-1 inline-flex items-center gap-1">
+      立即訂位 <i data-lucide="chevron-right" class="w-3 h-3"></i>
+    </a>
+  </div>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-charcoal-950/90 backdrop-blur-md border-b border-stone-800/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-flame-500 to-amberGold-600 flex items-center justify-center shadow-flame group-hover:scale-105 transition-transform duration-300">
+            <i data-lucide="flame" class="w-7 h-7 text-charcoal-950 fill-charcoal-950"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-serif font-black text-2xl tracking-wider text-white">焰</span>
+              <span class="font-serif text-lg tracking-widest text-stone-300">牛排館</span>
+            </div>
+            <span class="block text-[10px] uppercase tracking-[0.28em] text-flame-400 font-brand">Flame Steakhouse</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-7">
+          <a href="#about" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium">關於我們</a>
+          <a href="#signature" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium">精選牛排</a>
+          <a href="#menu" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium">餐點菜單</a>
+          <a href="#pricing" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium">消費方式</a>
+          <a href="#mascots" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium flex items-center gap-1.5">
+            <span>吉祥物</span>
+            <span class="px-1.5 py-0.2 bg-flame-500/20 text-flame-400 text-[10px] rounded border border-flame-500/40">飯糰 & 豬排</span>
+          </a>
+          <a href="#faq" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium">訪客須知</a>
+          <a href="#contact" class="text-stone-300 hover:text-flame-400 transition-colors text-sm font-medium">交通資訊</a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openBookingLookupModal()" class="px-3.5 py-2 text-xs font-medium text-stone-300 hover:text-white bg-stone-900 hover:bg-stone-800 border border-stone-700/70 rounded-lg transition-colors flex items-center gap-1.5">
+            <i data-lucide="receipt" class="w-3.5 h-3.5 text-flame-400"></i>
+            <span>查詢訂位</span>
+          </button>
+          
+          <a href="#reservation" class="relative group overflow-hidden px-5 py-2.5 rounded-lg bg-gradient-to-r from-flame-600 via-flame-500 to-amberGold-500 text-charcoal-950 font-semibold text-sm shadow-flame hover:shadow-flame-lg transition-all duration-300 hover:scale-[1.02] flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>線上預約</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center gap-2">
+          <button onclick="openBookingLookupModal()" class="p-2 text-stone-300 hover:text-white bg-stone-900 border border-stone-800 rounded-lg text-xs flex items-center gap-1">
+            <i data-lucide="receipt" class="w-4 h-4 text-flame-400"></i>
+          </button>
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2.5 text-stone-400 hover:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-flame-500 bg-stone-900 border border-stone-800" aria-label="切換選單">
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-charcoal-900 border-b border-stone-800 px-4 pt-3 pb-6 space-y-3">
+      <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">關於我們</a>
+      <a href="#signature" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">精選牛排</a>
+      <a href="#menu" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">餐點菜單</a>
+      <a href="#pricing" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">消費方式</a>
+      <a href="#mascots" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">人氣吉祥物 (飯糰 & 豬排)</a>
+      <a href="#faq" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">訪客須知 & Q&A</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-stone-300 hover:text-white hover:bg-charcoal-800 font-medium">交通與聯絡方式</a>
+      <div class="pt-3 border-t border-stone-800 flex flex-col gap-2">
+        <a href="#reservation" onclick="toggleMobileMenu()" class="w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-flame-600 to-amberGold-500 text-charcoal-950 font-bold text-sm shadow-flame">
+          立即線上預約
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-wood-grain">
+    <!-- Ambient glowing fire light background effects -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-flame-600/15 rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-10 left-1/4 w-[400px] h-[400px] bg-amberGold-500/10 rounded-full blur-[120px]"></div>
+      
+      <!-- Subtle Embers -->
+      <div class="ember-particle" style="left: 20%; bottom: 15%; animation-delay: 0s;"></div>
+      <div class="ember-particle" style="left: 45%; bottom: 10%; animation-delay: 1.5s; width: 6px; height: 6px;"></div>
+      <div class="ember-particle" style="left: 70%; bottom: 20%; animation-delay: 0.8s;"></div>
+      <div class="ember-particle" style="left: 85%; bottom: 12%; animation-delay: 2.2s;"></div>
+    </div>
+
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80" 
+           alt="Flame Steak Background" 
+           class="w-full h-full object-cover opacity-25 filter saturate-150 contrast-125">
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/80 to-charcoal-950/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      
+      <!-- Sub-tag badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-900/90 border border-flame-500/30 text-flame-300 text-sm mb-6 shadow-flame backdrop-blur-sm">
+        <i data-lucide="sparkles" class="w-4 h-4 text-amberGold-400"></i>
+        <span class="tracking-wider">新北市鶯歌區 頂級原肉炙燒牛排館</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight leading-tight text-white mb-6">
+        歡迎來到<span class="flame-gradient-text px-2">「焰牛排館」</span><br class="hidden sm:inline">
+        享受一份令人難忘的美味牛排
+      </h1>
+
+      <!-- Slogan Banner -->
+      <div class="max-w-2xl mx-auto mb-8">
+        <p class="text-xl sm:text-2xl font-serif text-amberGold-300 font-semibold tracking-wide mb-4">
+          「焰火炙燒好滋味，一口牛排，滿滿幸福。」
+        </p>
+        <p class="text-stone-300 text-base sm:text-lg leading-relaxed font-light">
+          嚴選優質食材，搭配專業火烤技術，讓每一口牛排都充滿香氣與美味。<br class="hidden md:inline">
+          無論是朋友聚餐、情侶約會，還是家庭用餐，都能在「焰牛排館」享受美好的用餐時光。
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="#reservation" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-flame-600 via-flame-500 to-amberGold-500 text-charcoal-950 font-bold text-lg shadow-flame hover:shadow-flame-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
+          <i data-lucide="calendar-check" class="w-5 h-5"></i>
+          <span>立即線上預約</span>
+        </a>
+        <a href="#signature" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-stone-700 font-medium text-lg transition-all duration-300 flex items-center justify-center gap-3 hover:border-flame-500/50">
+          <i data-lucide="utensils-crossed" class="w-5 h-5 text-flame-400"></i>
+          <span>探索招牌美味</span>
+        </a>
+      </div>
+
+      <!-- Quick Highlights Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+        <div class="bg-charcoal-900/80 border border-stone-800/80 rounded-xl p-4 backdrop-blur-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-flame-500/10 flex items-center justify-center text-flame-400 shrink-0">
+            <i data-lucide="flame" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs text-stone-400">火候堅持</div>
+            <div class="text-sm font-semibold text-white">專業高溫火烤</div>
+          </div>
+        </div>
+
+        <div class="bg-charcoal-900/80 border border-stone-800/80 rounded-xl p-4 backdrop-blur-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-flame-500/10 flex items-center justify-center text-amberGold-400 shrink-0">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs text-stone-400">肉品保證</div>
+            <div class="text-sm font-semibold text-white">100% 嚴選原塊肉</div>
+          </div>
+        </div>
+
+        <div class="bg-charcoal-900/80 border border-stone-800/80 rounded-xl p-4 backdrop-blur-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-flame-500/10 flex items-center justify-center text-flame-400 shrink-0">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs text-stone-400">適宜場合</div>
+            <div class="text-sm font-semibold text-white">約會．家庭．聚餐</div>
+          </div>
+        </div>
+
+        <div class="bg-charcoal-900/80 border border-stone-800/80 rounded-xl p-4 backdrop-blur-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-flame-500/10 flex items-center justify-center text-amberGold-400 shrink-0">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs text-stone-400">營業時間</div>
+            <div class="text-sm font-semibold text-white">11:00 - 21:00</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT US SECTION ==================== -->
+  <section id="about" class="py-24 bg-charcoal-900 border-t border-stone-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Image Collage -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-stone-700/60 group">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Chef Grilling Steak" 
+                 class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="inline-block px-3 py-1 bg-flame-600 text-charcoal-950 text-xs font-bold rounded-md mb-2">炭火炙燒工藝</span>
+              <p class="text-white font-serif text-lg font-bold">高溫瞬間鎖汁，外層微酥、內部粉嫩多汁</p>
+            </div>
+          </div>
+
+          <!-- Secondary Image Floating Card -->
+          <div class="hidden sm:block absolute -bottom-8 -right-8 w-64 rounded-xl overflow-hidden shadow-flame border-2 border-stone-700 bg-charcoal-950 p-2 z-20">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" 
+                 alt="Steakhouse Dining Atmosphere" 
+                 class="w-full h-36 object-cover rounded-lg">
+            <div class="p-2 text-center">
+              <span class="text-xs text-amberGold-400 font-semibold block">極致舒適用餐環境</span>
+              <span class="text-[11px] text-stone-400">深木質調搭配溫馨火光氛圍</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story & Details -->
+        <div class="lg:col-span-6 lg:pl-6">
+          <div class="inline-flex items-center gap-2 text-flame-400 text-sm font-semibold tracking-wider uppercase mb-3">
+            <i data-lucide="flame" class="w-4 h-4"></i>
+            <span>關於我們 ABOUT FLAME</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-black text-white leading-tight mb-6">
+            以高品質牛排為本，<br>
+            創造家人與好友相聚的溫暖記憶
+          </h2>
+          <div class="space-y-4 text-stone-300 leading-relaxed text-base">
+            <p>
+              「焰牛排館」是一家以高品質牛排為主的精緻排餐餐廳。我們座落於充滿人文底蘊的新北市鶯歌區，秉持對料理的純粹熱忱，精心打造每一道直火料理。
+            </p>
+            <p>
+              我們嚴選新鮮食材與優質牛肉，搭配恰到好處的火候與主廚特調醬汁，讓每位客人都能品嚐到鮮嫩多汁、層次豐富的絕妙肉質。
+            </p>
+            <p class="text-flame-300 font-medium">
+              我們希望提供的不只是美味餐點，更是一個能放慢步調、與家人、朋友、另一半一起放鬆享受美食的溫馨舒適空間。
+            </p>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-stone-800">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-flame-500/20 text-flame-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">嚴選優質牛肉</h4>
+                <p class="text-stone-400 text-xs">堅持原塊鮮切，絕不使用重組肉品</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-flame-500/20 text-flame-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">專業火候控制</h4>
+                <p class="text-stone-400 text-xs">精準掌握 3分、5分、7分 熟度熟成</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-flame-500/20 text-flame-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">特製經典醬汁</h4>
+                <p class="text-stone-400 text-xs">黑胡椒醬、蘑菇紅酒醬每日熬煮</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-flame-500/20 text-flame-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">聚餐約會首選</h4>
+                <p class="text-stone-400 text-xs">寬敞桌距、舒適用餐氛圍與友善服務</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SIGNATURE STEAKS SECTION ==================== -->
+  <section id="signature" class="py-24 bg-charcoal-950 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-amberGold-400 uppercase bg-amberGold-500/10 px-3 py-1 rounded-full border border-amberGold-500/20 mb-3">
+          CHEF'S SIGNATURE
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          精選招牌餐點
+        </h2>
+        <p class="text-stone-400 text-base sm:text-lg">
+          主廚匠心研發，每道排餐皆附有主廚特製配菜與現烤熱餐包，搭配獨家特調醬汁。
+        </p>
+      </div>
+
+      <!-- 4 Core Featured Steaks Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Card 1: 炙烤沙朗牛排 -->
+        <div class="bg-charcoal-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-flame-500/60 transition-all duration-300 group hover:-translate-y-1 hover:shadow-flame flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" 
+                   alt="炙烤沙朗牛排" 
+                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-3 left-3 bg-flame-600 text-charcoal-950 font-black text-xs px-2.5 py-1 rounded-md shadow-md">
+                人氣經典 NO.1
+              </div>
+              <div class="absolute bottom-3 right-3 bg-charcoal-950/80 backdrop-blur-sm text-amberGold-400 font-bold text-xs px-2 py-1 rounded border border-stone-700">
+                建議 5 分熟
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-white group-hover:text-flame-400 transition-colors">
+                  炙烤沙朗牛排
+                </h3>
+                <span class="text-flame-400 font-bold text-lg font-serif">NT$ 580</span>
+              </div>
+              <p class="text-stone-400 text-sm leading-relaxed mb-4">
+                肉質鮮嫩多汁，油花分布均勻，大火炙燒封鎖甘甜肉汁，搭配特製醬汁，是喜歡經典牛排口味的最佳選擇。
+              </p>
+              
+              <div class="space-y-1.5 text-xs text-stone-400 border-t border-stone-800/80 pt-3">
+                <div class="flex justify-between"><span>份量：</span><span class="text-stone-300 font-medium">9 oz (約 255g)</span></div>
+                <div class="flex justify-between"><span>口感：</span><span class="text-stone-300 font-medium">多汁嚼勁、香氣濃郁</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openDishDetail('sirloin')" class="w-full py-2.5 rounded-lg bg-stone-800 hover:bg-flame-600 text-stone-200 hover:text-charcoal-950 font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>查看詳細內容</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: 厚切菲力牛排 -->
+        <div class="bg-charcoal-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-flame-500/60 transition-all duration-300 group hover:-translate-y-1 hover:shadow-flame flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                   alt="厚切菲力牛排" 
+                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-3 left-3 bg-amberGold-500 text-charcoal-950 font-black text-xs px-2.5 py-1 rounded-md shadow-md">
+                主廚嚴選頂級
+              </div>
+              <div class="absolute bottom-3 right-3 bg-charcoal-950/80 backdrop-blur-sm text-amberGold-400 font-bold text-xs px-2 py-1 rounded border border-stone-700">
+                建議 3~5 分熟
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-white group-hover:text-flame-400 transition-colors">
+                  厚切菲力牛排
+                </h3>
+                <span class="text-flame-400 font-bold text-lg font-serif">NT$ 720</span>
+              </div>
+              <p class="text-stone-400 text-sm leading-relaxed mb-4">
+                取自牛肉最柔嫩的腰內肉，脂肪含量低、口感柔嫩、肉質細緻如絲絨，入口即化，適合喜歡高品質極致肉感的客人。
+              </p>
+              
+              <div class="space-y-1.5 text-xs text-stone-400 border-t border-stone-800/80 pt-3">
+                <div class="flex justify-between"><span>份量：</span><span class="text-stone-300 font-medium">8 oz (約 230g)</span></div>
+                <div class="flex justify-between"><span>口感：</span><span class="text-stone-300 font-medium">極致柔嫩、肉香純粹</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openDishDetail('filet')" class="w-full py-2.5 rounded-lg bg-stone-800 hover:bg-flame-600 text-stone-200 hover:text-charcoal-950 font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>查看詳細內容</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: 香煎豬排 -->
+        <div class="bg-charcoal-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-flame-500/60 transition-all duration-300 group hover:-translate-y-1 hover:shadow-flame flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80" 
+                   alt="香煎豬排" 
+                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-3 left-3 bg-stone-800 text-stone-200 font-bold text-xs px-2.5 py-1 rounded-md border border-stone-700 shadow-md">
+                人氣排餐
+              </div>
+              <div class="absolute bottom-3 right-3 bg-charcoal-950/80 backdrop-blur-sm text-amberGold-400 font-bold text-xs px-2 py-1 rounded border border-stone-700">
+                全熟香煎
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-white group-hover:text-flame-400 transition-colors">
+                  香煎豬排
+                </h3>
+                <span class="text-flame-400 font-bold text-lg font-serif">NT$ 420</span>
+              </div>
+              <p class="text-stone-400 text-sm leading-relaxed mb-4">
+                嚴選產地優質厚切梅花豬排，外層煎至金黃微脆、內部飽滿鮮嫩多汁，搭配特製醬汁與現磨黑胡椒，香氣撲鼻。
+              </p>
+              
+              <div class="space-y-1.5 text-xs text-stone-400 border-t border-stone-800/80 pt-3">
+                <div class="flex justify-between"><span>份量：</span><span class="text-stone-300 font-medium">9 oz (約 255g)</span></div>
+                <div class="flex justify-between"><span>口感：</span><span class="text-stone-300 font-medium">外脆內嫩、彈牙不柴</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openDishDetail('pork')" class="w-full py-2.5 rounded-lg bg-stone-800 hover:bg-flame-600 text-stone-200 hover:text-charcoal-950 font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>查看詳細內容</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: 牛排雙拼套餐 -->
+        <div class="bg-charcoal-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-flame-500/60 transition-all duration-300 group hover:-translate-y-1 hover:shadow-flame flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80" 
+                   alt="牛排雙拼套餐" 
+                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-3 left-3 bg-gradient-to-r from-flame-600 to-amberGold-500 text-charcoal-950 font-black text-xs px-2.5 py-1 rounded-md shadow-md">
+                雙重享受 超值推
+              </div>
+              <div class="absolute bottom-3 right-3 bg-charcoal-950/80 backdrop-blur-sm text-amberGold-400 font-bold text-xs px-2 py-1 rounded border border-stone-700">
+                附豐盛副餐
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-white group-hover:text-flame-400 transition-colors">
+                  牛排雙拼套餐
+                </h3>
+                <span class="text-flame-400 font-bold text-lg font-serif">NT$ 680</span>
+              </div>
+              <p class="text-stone-400 text-sm leading-relaxed mb-4">
+                一次享用炭烤牛排與香煎豬排雙重美味！搭配現炸酥脆薯條、田園清爽沙拉與精選飲品，適合想一次品嚐不同肉類的客人。
+              </p>
+              
+              <div class="space-y-1.5 text-xs text-stone-400 border-t border-stone-800/80 pt-3">
+                <div class="flex justify-between"><span>份量：</span><span class="text-stone-300 font-medium">牛 6oz + 豬 6oz (共 12oz)</span></div>
+                <div class="flex justify-between"><span>搭配：</span><span class="text-stone-300 font-medium">附薯條 + 沙拉 + 飲料</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openDishDetail('combo')" class="w-full py-2.5 rounded-lg bg-stone-800 hover:bg-flame-600 text-stone-200 hover:text-charcoal-950 font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>查看詳細內容</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COMPLETE MENU SECTION ==================== -->
+  <section id="menu" class="py-24 bg-charcoal-900 border-t border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold tracking-widest text-flame-400 uppercase bg-flame-500/10 px-3 py-1 rounded-full border border-flame-500/20 mb-3 inline-block">
+          DELICIOUS MENU
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          焰牛排館 嚴選菜單
+        </h2>
+        <p class="text-stone-400 text-base">
+          提供精緻牛排、香煎排餐、義大利麵、特調飲料及甜點，全系列餐點皆能隨心升級套餐。
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center justify-start sm:justify-center overflow-x-auto gap-2 pb-4 mb-10 no-scrollbar">
+        <button onclick="filterMenu('all')" data-cat="all" class="menu-tab-btn active px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-flame-600 text-charcoal-950 font-bold shadow-flame">
+          全部餐點 (All)
+        </button>
+        <button onclick="filterMenu('steak')" data-cat="steak" class="menu-tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-charcoal-800 text-stone-300 hover:text-white hover:bg-charcoal-700 border border-stone-700">
+          🥩 經典牛排
+        </button>
+        <button onclick="filterMenu('pork')" data-cat="pork" class="menu-tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-charcoal-800 text-stone-300 hover:text-white hover:bg-charcoal-700 border border-stone-700">
+          🍖 香煎排餐
+        </button>
+        <button onclick="filterMenu('pasta')" data-cat="pasta" class="menu-tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-charcoal-800 text-stone-300 hover:text-white hover:bg-charcoal-700 border border-stone-700">
+          🍝 義大利麵
+        </button>
+        <button onclick="filterMenu('drink')" data-cat="drink" class="menu-tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-charcoal-800 text-stone-300 hover:text-white hover:bg-charcoal-700 border border-stone-700">
+          🍹 特調飲料
+        </button>
+        <button onclick="filterMenu('dessert')" data-cat="dessert" class="menu-tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-charcoal-800 text-stone-300 hover:text-white hover:bg-charcoal-700 border border-stone-700">
+          🍮 精緻甜點
+        </button>
+      </div>
+
+      <!-- Menu Items Grid (Dynamically rendered/filtered via JS) -->
+      <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Javascript will inject items here -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PRICING & DINING GUIDE ==================== -->
+  <section id="pricing" class="py-24 bg-charcoal-950 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-amberGold-400 uppercase bg-amberGold-500/10 px-3 py-1 rounded-full border border-amberGold-500/20 mb-3 inline-block">
+          PRICING & SETS
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          消費方式與套餐升級
+        </h2>
+        <p class="text-stone-400 text-base">
+          透明平實的價格、豐富客製化搭配，讓每一次用餐都倍感物超所值。
+        </p>
+      </div>
+
+      <!-- Set Menu Combinations (Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+        
+        <!-- Option A -->
+        <div class="bg-charcoal-900 border border-stone-800 rounded-2xl p-8 relative flex flex-col justify-between hover:border-stone-700 transition-colors">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-flame-400">VALUE SET</span>
+                <h3 class="text-2xl font-serif font-bold text-white mt-1">A套餐：輕饗副餐</h3>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-serif font-bold text-amberGold-400">+ NT$ 120</span>
+                <span class="block text-[11px] text-stone-400">主餐加購價</span>
+              </div>
+            </div>
+            <p class="text-stone-400 text-sm mb-6 leading-relaxed">
+              適合食量精緻或喜愛暖胃湯品的顧客，包含主廚當日特熬濃湯與經典沙拉。
+            </p>
+            <ul class="space-y-3 text-sm text-stone-300">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-flame-500 shrink-0"></i>
+                <span><strong>田園鮮蔬沙拉</strong>（千島醬 / 凱薩醬 二選一）</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-flame-500 shrink-0"></i>
+                <span><strong>主廚特熬濃湯</strong>（法式玉米濃湯 / 義式番茄牛肉湯）</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-flame-500 shrink-0"></i>
+                <span><strong>現烤蒜香奶油熱餐包</strong>（每人 2 顆）</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-stone-800 text-xs text-stone-400">
+            * 凡點購任一主餐即可享有 A 套餐加購優惠。
+          </div>
+        </div>
+
+        <!-- Option B -->
+        <div class="bg-gradient-to-b from-wood-900/40 via-charcoal-900 to-charcoal-900 border-2 border-flame-500/50 rounded-2xl p-8 relative flex flex-col justify-between shadow-flame">
+          <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-flame-600 to-amberGold-500 text-charcoal-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+            ★ 主廚極致推薦
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-amberGold-400">FULL FEAST SET</span>
+                <h3 class="text-2xl font-serif font-bold text-white mt-1">B套餐：焰火豪華全餐</h3>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-serif font-bold text-amberGold-400">+ NT$ 180</span>
+                <span class="block text-[11px] text-stone-400">主餐加購價</span>
+              </div>
+            </div>
+            <p class="text-stone-300 text-sm mb-6 leading-relaxed">
+              從沙拉、濃湯、黃金脆薯到手作甜點與冷熱飲品，一次收錄完整極致饗宴。
+            </p>
+            <ul class="space-y-3 text-sm text-stone-200">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amberGold-400 shrink-0"></i>
+                <span><strong>田園鮮蔬沙拉</strong>（千島 / 凱薩 / 和風油醋 任選）</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amberGold-400 shrink-0"></i>
+                <span><strong>主廚濃湯</strong>（法式玉米濃湯 / 義式番茄牛肉湯）</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amberGold-400 shrink-0"></i>
+                <span><strong>黃金香酥脆薯</strong>佐特調松露美乃滋</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amberGold-400 shrink-0"></i>
+                <span><strong>手作甜點任選一份</strong>（焦糖烤布蕾 / 提拉米蘇）</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amberGold-400 shrink-0"></i>
+                <span><strong>特調飲品任選一杯</strong>（冷熱皆可）</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-stone-800 text-xs text-stone-400">
+            * 飲品若欲升級精選紅白酒，可折抵 NT$ 80 元補差額。
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dining Policy & Notice Cards -->
+      <div class="bg-charcoal-900 border border-stone-800/80 rounded-2xl p-6 sm:p-8 max-w-5xl mx-auto">
+        <h4 class="text-lg font-serif font-bold text-white mb-6 flex items-center gap-2">
+          <i data-lucide="info" class="w-5 h-5 text-flame-400"></i>
+          <span>用餐消費須知與規定說明</span>
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm text-stone-300">
+          <div class="border-l-2 border-flame-500 pl-4 py-1">
+            <h5 class="font-bold text-white mb-1">基本低消規定</h5>
+            <p class="text-stone-400 text-xs leading-relaxed">每位客人最低消費為一份排餐/主餐，或單點金額滿 NT$ 200 元（身高 110 公分以下孩童免低消）。</p>
+          </div>
+          <div class="border-l-2 border-amberGold-500 pl-4 py-1">
+            <h5 class="font-bold text-white mb-1">服務費說明</h5>
+            <p class="text-stone-400 text-xs leading-relaxed">為維護最佳服務品質與餐點即時炙燒，店內內用酌收 10% 服務費。</p>
+          </div>
+          <div class="border-l-2 border-flame-500 pl-4 py-1">
+            <h5 class="font-bold text-white mb-1">假日用餐時間</h5>
+            <p class="text-stone-400 text-xs leading-relaxed">平日用餐不特別限時；如遇週末或國定連續假期客滿時，用餐時間為 90 分鐘。</p>
+          </div>
+          <div class="border-l-2 border-amberGold-500 pl-4 py-1">
+            <h5 class="font-bold text-white mb-1">多元付款支援</h5>
+            <p class="text-stone-400 text-xs leading-relaxed">支援現金、各大信用卡、Apple Pay、LINE Pay 及台灣 Pay 行動支付，輕鬆結帳。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MASCOT SECTION ==================== -->
+  <section id="mascots" class="py-24 bg-wood-grain border-t border-stone-800/80 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-flame-400 uppercase bg-flame-500/10 px-3 py-1 rounded-full border border-flame-500/20 mb-3 inline-block">
+          RESTAURANT MASCOTS
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          認識焰牛排館的可愛夥伴！
+        </h2>
+        <p class="text-stone-300 text-base sm:text-lg">
+          每一位走進焰牛排館的客人，都有我們的招牌吉祥物熱情守候。快點擊牠們聽聽推薦的話吧！
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Mascot 1: 飯糰 (Onigiri) -->
+        <div class="bg-charcoal-900/90 border border-stone-800 rounded-3xl p-8 hover:border-flame-500/60 transition-all duration-300 shadow-xl relative group">
+          <div class="flex flex-col sm:flex-row items-center gap-6">
+            
+            <!-- Mascot SVG Avatar -->
+            <div class="w-36 h-36 shrink-0 relative bg-gradient-to-br from-flame-500/20 to-amberGold-500/20 rounded-2xl flex items-center justify-center p-3 border border-flame-500/30 group-hover:scale-105 transition-transform">
+              <svg viewBox="0 0 160 160" class="w-full h-full drop-shadow-md">
+                <!-- Cute Rice Ball (Onigiri) SVG -->
+                <!-- Body -->
+                <path d="M80 20 C105 20, 135 110, 125 130 C118 142, 42 142, 35 130 C25 110, 55 20, 80 20 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="3" />
+                <!-- Seaweed Nori -->
+                <path d="M56 100 C56 95, 104 95, 104 100 L102 138 C102 140, 58 140, 58 138 Z" fill="#1e293b" />
+                <!-- Blushing Cheeks -->
+                <ellipse cx="52" cy="78" rx="8" ry="5" fill="#fca5a5" opacity="0.8" />
+                <ellipse cx="108" cy="78" rx="8" ry="5" fill="#fca5a5" opacity="0.8" />
+                <!-- Big Happy Eyes -->
+                <circle cx="62" cy="68" r="5" fill="#1e293b" />
+                <circle cx="64" cy="66" r="1.8" fill="#ffffff" />
+                <circle cx="98" cy="68" r="5" fill="#1e293b" />
+                <circle cx="100" cy="66" r="1.8" fill="#ffffff" />
+                <!-- Smile -->
+                <path d="M74 76 Q80 84 86 76" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                <!-- Chef's flame badge on top -->
+                <path d="M76 16 C76 8, 84 6, 84 16 C88 12, 88 20, 80 24 C72 20, 72 12, 76 16 Z" fill="#ea580c" />
+              </svg>
+              <span class="absolute -bottom-2.5 bg-flame-600 text-charcoal-950 font-black text-[11px] px-3 py-0.5 rounded-full shadow">
+                親善大使
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="text-center sm:text-left flex-1">
+              <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                <h3 class="text-2xl font-serif font-black text-white">飯糰 (Onigiri)</h3>
+                <span class="text-xs text-flame-400 font-bold bg-flame-500/10 px-2 py-0.5 rounded border border-flame-500/30">活潑親切</span>
+              </div>
+              <p class="text-amberGold-300 text-xs font-medium mb-3">焰牛排館首席吉祥物</p>
+              <p class="text-stone-300 text-sm leading-relaxed mb-4">
+                負責歡迎每一位來店用餐的客人！個性活潑外向、超有禮貌，最擅長幫大家帶位與介紹每日主廚精選排餐。
+              </p>
+              
+              <!-- Interactive Quote Bubble -->
+              <div id="onigiriQuote" class="bg-charcoal-950 border border-stone-800 rounded-xl p-3 text-xs text-stone-300 italic relative">
+                <span class="text-flame-400 font-bold mr-1">💬「</span>
+                <span id="onigiriText">歡迎光臨焰牛排館！今天推薦軟嫩多汁的菲力牛排喔～</span>
+                <span class="text-flame-400 font-bold ml-1">」</span>
+              </div>
+              <button onclick="randomMascotQuote('onigiri')" class="mt-3 text-xs text-flame-400 hover:text-flame-300 font-semibold flex items-center justify-center sm:justify-start gap-1">
+                <i data-lucide="refresh-cw" class="w-3 h-3"></i> 換一句話
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Mascot 2: 豬排 (Tonkatsu) -->
+        <div class="bg-charcoal-900/90 border border-stone-800 rounded-3xl p-8 hover:border-amberGold-500/60 transition-all duration-300 shadow-xl relative group">
+          <div class="flex flex-col sm:flex-row items-center gap-6">
+            
+            <!-- Mascot SVG Avatar -->
+            <div class="w-36 h-36 shrink-0 relative bg-gradient-to-br from-amberGold-500/20 to-flame-500/20 rounded-2xl flex items-center justify-center p-3 border border-amberGold-500/30 group-hover:scale-105 transition-transform">
+              <svg viewBox="0 0 160 160" class="w-full h-full drop-shadow-md">
+                <!-- Cute Golden Pork Chop SVG -->
+                <!-- Crispy Breadcrumb Shape -->
+                <path d="M35 55 C35 30, 70 25, 110 32 C135 38, 142 75, 136 108 C130 135, 95 142, 60 135 C30 128, 25 90, 35 55 Z" fill="#d97706" stroke="#b45309" stroke-width="3" />
+                <path d="M42 60 C42 40, 70 34, 105 40 C125 45, 130 75, 126 102 C120 124, 92 130, 64 125 C40 120, 35 90, 42 60 Z" fill="#f59e0b" />
+                <!-- Cute Pig Snout -->
+                <ellipse cx="80" cy="85" rx="16" ry="11" fill="#fca5a5" stroke="#f43f5e" stroke-width="1.5" />
+                <circle cx="75" cy="85" r="2.5" fill="#881337" />
+                <circle cx="85" cy="85" r="2.5" fill="#881337" />
+                <!-- Big Innocent Eyes -->
+                <ellipse cx="62" cy="65" rx="5" ry="6" fill="#1e293b" />
+                <circle cx="64" cy="63" r="2" fill="#ffffff" />
+                <ellipse cx="98" cy="65" rx="5" ry="6" fill="#1e293b" />
+                <circle cx="100" cy="63" r="2" fill="#ffffff" />
+                <!-- Ears -->
+                <polygon points="46,35 35,18 60,25" fill="#d97706" />
+                <polygon points="105,32 125,20 115,40" fill="#d97706" />
+                <!-- Rosy Cheeks -->
+                <ellipse cx="50" cy="82" rx="6" ry="4" fill="#fb7185" opacity="0.7" />
+                <ellipse cx="110" cy="82" rx="6" ry="4" fill="#fb7185" opacity="0.7" />
+                <!-- Cute Chef Tie -->
+                <polygon points="80,105 72,120 88,120" fill="#dc2626" />
+              </svg>
+              <span class="absolute -bottom-2.5 bg-amberGold-500 text-charcoal-950 font-black text-[11px] px-3 py-0.5 rounded-full shadow">
+                人氣美味擔當
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="text-center sm:text-left flex-1">
+              <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                <h3 class="text-2xl font-serif font-black text-white">豬排 (Tonkatsu)</h3>
+                <span class="text-xs text-amberGold-400 font-bold bg-amberGold-500/10 px-2 py-0.5 rounded border border-amberGold-500/30">溫和可愛</span>
+              </div>
+              <p class="text-flame-400 text-xs font-medium mb-3">飯糰的好朋友兼美食鑑賞家</p>
+              <p class="text-stone-300 text-sm leading-relaxed mb-4">
+                餐廳的人氣吉祥物。個性溫柔呆萌，最喜歡和大家一起大口享用牛排與雙拼套餐，看到美味食物就忍不住露出幸福笑容。
+              </p>
+              
+              <!-- Interactive Quote Bubble -->
+              <div id="tonkatsuQuote" class="bg-charcoal-950 border border-stone-800 rounded-xl p-3 text-xs text-stone-300 italic relative">
+                <span class="text-amberGold-400 font-bold mr-1">💬「</span>
+                <span id="tonkatsuText">想吃牛排又想吃豬排嗎？點雙拼套餐就能一口滿足唷！</span>
+                <span class="text-amberGold-400 font-bold ml-1">」</span>
+              </div>
+              <button onclick="randomMascotQuote('tonkatsu')" class="mt-3 text-xs text-amberGold-400 hover:text-amberGold-300 font-semibold flex items-center justify-center sm:justify-start gap-1">
+                <i data-lucide="refresh-cw" class="w-3 h-3"></i> 換一句話
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ONLINE RESERVATION SYSTEM ==================== -->
+  <section id="reservation" class="py-24 bg-charcoal-950 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-4xl mx-auto bg-charcoal-900 border border-flame-800/50 rounded-3xl p-6 sm:p-12 shadow-flame relative overflow-hidden">
+        
+        <!-- Ambient subtle glow inside card -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-flame-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold tracking-widest text-flame-400 uppercase bg-flame-500/10 px-3 py-1 rounded-full border border-flame-500/20 mb-3 inline-block">
+            ONLINE RESERVATION
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-black text-white tracking-tight mb-3">
+            線上預約用餐訂位
+          </h2>
+          <p class="text-stone-400 text-sm sm:text-base">
+            提供未來 30 天內座位即時預約。送出後將立即生成訂位確認單與專屬預約代碼！
+          </p>
+        </div>
+
+        <!-- Reservation Form -->
+        <form id="bookingForm" onsubmit="handleReservationSubmit(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            <!-- Date Picker -->
+            <div>
+              <label for="bookDate" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-flame-400"></i>
+                <span>預約用餐日期 <span class="text-flame-400">*</span></span>
+              </label>
+              <input type="date" id="bookDate" required 
+                     class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+            </div>
+
+            <!-- Time Slot -->
+            <div>
+              <label for="bookTime" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-flame-400"></i>
+                <span>用餐時段 <span class="text-flame-400">*</span></span>
+              </label>
+              <select id="bookTime" required 
+                      class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+                <option value="" disabled selected>請選擇時段</option>
+                <optgroup label="午餐時段 (Lunch)">
+                  <option value="11:30">11:30</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                </optgroup>
+                <optgroup label="晚餐時段 (Dinner)">
+                  <option value="17:00">17:00</option>
+                  <option value="17:30">17:30</option>
+                  <option value="18:00">18:00 (熱門時段)</option>
+                  <option value="18:30">18:30 (熱門時段)</option>
+                  <option value="19:00">19:00 (熱門時段)</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20:00">20:00</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Guest Count -->
+            <div>
+              <label for="bookGuests" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+                <i data-lucide="users" class="w-3.5 h-3.5 text-flame-400"></i>
+                <span>用餐人數 <span class="text-flame-400">*</span></span>
+              </label>
+              <select id="bookGuests" required 
+                      class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+                <option value="1">1 位顧客 (吧台/獨立座)</option>
+                <option value="2" selected>2 位顧客 (浪漫雙人座)</option>
+                <option value="3">3 位顧客</option>
+                <option value="4">4 位顧客 (舒適四人方桌)</option>
+                <option value="5">5 位顧客</option>
+                <option value="6">6 位顧客 (歡聚大長桌)</option>
+                <option value="8">8 位顧客 (多人聚餐)</option>
+                <option value="10">10 位以上 (大型聚會請電話聯繫)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            <!-- Customer Name -->
+            <div>
+              <label for="bookName" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+                <i data-lucide="user" class="w-3.5 h-3.5 text-flame-400"></i>
+                <span>訂位姓名 <span class="text-flame-400">*</span></span>
+              </label>
+              <input type="text" id="bookName" placeholder="例如：林先生 / 陳小姐" required 
+                     class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="bookPhone" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-flame-400"></i>
+                <span>聯絡手機 <span class="text-flame-400">*</span></span>
+              </label>
+              <input type="tel" id="bookPhone" placeholder="0912-345-678" required 
+                     class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+            </div>
+
+            <!-- Dining Purpose -->
+            <div>
+              <label for="bookPurpose" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 text-flame-400"></i>
+                <span>用餐目的</span>
+              </label>
+              <select id="bookPurpose" 
+                      class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+                <option value="一般聚餐">日常享受美味</option>
+                <option value="情侶約會">情侶浪漫約會</option>
+                <option value="家庭聚餐">溫馨家庭聚餐</option>
+                <option value="生日慶祝">壽星慶祝 (附贈小驚喜)</option>
+                <option value="商務用餐">商務款待貴賓</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Email (Optional for confirmation notice) -->
+          <div>
+            <label for="bookEmail" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-flame-400"></i>
+              <span>電子郵件 Email (供備用通知)</span>
+            </label>
+            <input type="email" id="bookEmail" placeholder="your-email@example.com" 
+                   class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors">
+          </div>
+
+          <!-- Special Requests / Notes -->
+          <div>
+            <label for="bookNotes" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2 flex items-center gap-1.5">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-flame-400"></i>
+              <span>特殊飲食需求或貼心備註</span>
+            </label>
+            <textarea id="bookNotes" rows="2" placeholder="如需兒童座椅、有輪椅空間需求、過敏體質或對牛肉不食者，歡迎在此提前備註..." 
+                      class="w-full bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-flame-500 transition-colors"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-3">
+            <button type="submit" 
+                    class="w-full py-4 rounded-xl bg-gradient-to-r from-flame-600 via-flame-500 to-amberGold-500 text-charcoal-950 font-black text-lg tracking-wider shadow-flame hover:shadow-flame-lg transition-all duration-300 hover:scale-[1.01] flex items-center justify-center gap-2">
+              <i data-lucide="check-check" class="w-5 h-5"></i>
+              <span>確認送出預約訂位</span>
+            </button>
+            <p class="text-center text-stone-400 text-xs mt-3 flex items-center justify-center gap-2">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>免預付訂金，預約成功後系統將發給專屬訂位序號，可隨時線上查詢。</span>
+            </p>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== VISITOR GUIDELINES & FAQ ==================== -->
+  <section id="faq" class="py-24 bg-charcoal-900 border-t border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-amberGold-400 uppercase bg-amberGold-500/10 px-3 py-1 rounded-full border border-amberGold-500/20 mb-3 inline-block">
+          GUIDELINES & FAQ
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          訪客須知與常見問題
+        </h2>
+        <p class="text-stone-400 text-base">
+          為了帶給每位貴賓最極致的餐飲體驗，請撥冗參閱我們的來訪指南與常見問答。
+        </p>
+      </div>
+
+      <!-- 4 Core Guidelines Cards (Exact from requirements) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <div class="bg-charcoal-950 border border-stone-800 rounded-2xl p-6 text-center hover:border-flame-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-flame-500/10 text-flame-400 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="calendar-clock" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-serif font-bold text-white text-base mb-2">1. 建議提前預約</h4>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            為避免現場等候時間過長，強烈建議您提前透過本網站線上系統或電話預約訂位。
+          </p>
+        </div>
+
+        <div class="bg-charcoal-950 border border-stone-800 rounded-2xl p-6 text-center hover:border-flame-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-amberGold-500/10 text-amberGold-400 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="phone-forwarded" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-serif font-bold text-white text-base mb-2">2. 取消預約通知</h4>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            如行程有所變更需取消或更改訂位時間人數，請至少提前 1 小時告知我們，感謝配合。
+          </p>
+        </div>
+
+        <div class="bg-charcoal-950 border border-stone-800 rounded-2xl p-6 text-center hover:border-flame-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-flame-500/10 text-flame-400 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="hourglass" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-serif font-bold text-white text-base mb-2">3. 用餐時間安排</h4>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            座位保留 10 分鐘。遇客滿高峰期時用餐時間依現場人潮安排（一般約 90 分鐘）。
+          </p>
+        </div>
+
+        <div class="bg-charcoal-950 border border-stone-800 rounded-2xl p-6 text-center hover:border-flame-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-amberGold-500/10 text-amberGold-400 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-serif font-bold text-white text-base mb-2">4. 特殊飲食需求</h4>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            若您或同行親友對特定食材過敏或不吃牛肉，請於點餐前或線上預約時提前告知服務夥伴。
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Accordion FAQ -->
+      <div class="max-w-3xl mx-auto space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="bg-charcoal-950 border border-stone-800 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex items-center justify-between text-white font-medium hover:text-flame-400 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-flame-500 font-bold">Q1.</span>
+              <span>沒有預約可以直接到現場候位嗎？</span>
+            </span>
+            <i data-lucide="chevron-down" id="faqIcon-1" class="w-5 h-5 transition-transform duration-300"></i>
+          </button>
+          <div id="faqContent-1" class="hidden px-6 pb-5 pt-1 text-sm text-stone-400 leading-relaxed border-t border-stone-850">
+            現場有保留部分散客桌次供現場登記候位。不過在週末晚間或特殊節日，現場候位時間可能長達 30-60 分鐘，因此強烈建議大家先利用我們的線上系統預約，確保第一時間享有美好用餐時光！
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-charcoal-950 border border-stone-800 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex items-center justify-between text-white font-medium hover:text-flame-400 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-flame-500 font-bold">Q2.</span>
+              <span>牛排推薦幾分熟？如果怕見血怎麼辦？</span>
+            </span>
+            <i data-lucide="chevron-down" id="faqIcon-2" class="w-5 h-5 transition-transform duration-300"></i>
+          </button>
+          <div id="faqContent-2" class="hidden px-6 pb-5 pt-1 text-sm text-stone-400 leading-relaxed border-t border-stone-850">
+            厚切菲力我們推薦 3 至 5 分熟，肉質最為滑嫩；沙朗牛排則推薦 5 至 7 分熟，炭烤油花焦香最濃郁。如果您不習慣看見血水，可選擇 7 分熟，或選擇我們的全熟香煎豬排、義大利麵等餐點。
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-charcoal-950 border border-stone-800 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left flex items-center justify-between text-white font-medium hover:text-flame-400 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-flame-500 font-bold">Q3.</span>
+              <span>店內有提供兒童座椅和餐具嗎？親子友善嗎？</span>
+            </span>
+            <i data-lucide="chevron-down" id="faqIcon-3" class="w-5 h-5 transition-transform duration-300"></i>
+          </button>
+          <div id="faqContent-3" class="hidden px-6 pb-5 pt-1 text-sm text-stone-400 leading-relaxed border-t border-stone-850">
+            有的！焰牛排館非常歡迎家庭帶小朋友前來用餐。我們備有安全的兒童專用座椅、兒童無毒餐具，以及溫熱的特熬玉米濃湯，且 110 公分以下孩童免收低消。
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-charcoal-950 border border-stone-800 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left flex items-center justify-between text-white font-medium hover:text-flame-400 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-flame-500 font-bold">Q4.</span>
+              <span>當月或當日壽星有專屬慶生優惠嗎？</span>
+            </span>
+            <i data-lucide="chevron-down" id="faqIcon-4" class="w-5 h-5 transition-transform duration-300"></i>
+          </button>
+          <div id="faqContent-4" class="hidden px-6 pb-5 pt-1 text-sm text-stone-400 leading-relaxed border-t border-stone-850">
+            有的！當月壽星來店用餐並出示證件，即免費招待「吉祥物特製炙燒焦糖烤布蕾」或主廚精選甜點一份，訂位時備註「生日慶祝」我們會提前為您準備專屬桌邊驚喜！
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-charcoal-950 border border-stone-800 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(5)" class="w-full px-6 py-4 text-left flex items-center justify-between text-white font-medium hover:text-flame-400 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-flame-500 font-bold">Q5.</span>
+              <span>開車前往附近方便停車嗎？</span>
+            </span>
+            <i data-lucide="chevron-down" id="faqIcon-5" class="w-5 h-5 transition-transform duration-300"></i>
+          </button>
+          <div id="faqContent-5" class="hidden px-6 pb-5 pt-1 text-sm text-stone-400 leading-relaxed border-t border-stone-850">
+            餐廳周邊步行 3-5 分鐘內有鶯歌中正公有停車場及中正一路路邊停車格；若搭乘台鐵至「鶯歌火車站」，由文化路/建國路出口步行約 8-10 分鐘即可抵達。
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT & LOCATION ==================== -->
+  <section id="contact" class="py-24 bg-charcoal-950 border-t border-stone-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Contact Info Details -->
+        <div class="lg:col-span-6 space-y-8">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-flame-400 uppercase bg-flame-500/10 px-3 py-1 rounded-full border border-flame-500/20 mb-3 inline-block">
+              VISIT US
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-black text-white tracking-tight mb-4">
+              門市聯絡資訊與營業時間
+            </h2>
+            <p class="text-stone-400 text-sm sm:text-base leading-relaxed">
+              位於新北市鶯歌區的核心地段，隨時歡迎您與所愛之人蒞臨品嚐最溫暖厚實的火烤滋味。
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Address -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-charcoal-900 border border-stone-800">
+              <div class="w-10 h-10 rounded-lg bg-flame-500/20 text-flame-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-stone-400 font-bold uppercase tracking-wider block">門市地址</span>
+                <span class="text-white font-medium text-base">新北市 鶯歌區 中正四路 1 號</span>
+                <span class="text-stone-400 text-xs block mt-1">（近鶯歌老街商圈、台鐵鶯歌站步行約 8 分鐘）</span>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-charcoal-900 border border-stone-800">
+              <div class="w-10 h-10 rounded-lg bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-stone-400 font-bold uppercase tracking-wider block">訂位與服務專線</span>
+                <a href="tel:02-1234-5678" class="text-white hover:text-flame-400 transition-colors font-serif font-bold text-xl block mt-0.5">
+                  02-1234-5678
+                </a>
+                <span class="text-stone-400 text-xs block mt-1">電話接聽時段：營業時間 11:00 至 21:00</span>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-charcoal-900 border border-stone-800">
+              <div class="w-10 h-10 rounded-lg bg-flame-500/20 text-flame-400 flex items-center justify-center shrink-0">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-stone-400 font-bold uppercase tracking-wider block">營業時間</span>
+                <div class="text-white font-medium text-base mt-0.5">週二至週日 11:00 - 21:00</div>
+                <div class="inline-flex items-center gap-1.5 mt-1.5 px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-xs border border-rose-500/30 font-medium">
+                  <i data-lucide="alert-circle" class="w-3 h-3"></i> 每週一為固定公休日
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transportation Guide -->
+          <div class="p-4 rounded-xl bg-stone-900/60 border border-stone-800 text-xs text-stone-300 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i data-lucide="compass" class="w-4 h-4 text-amberGold-400"></i>
+              <span>如何抵達焰牛排館？</span>
+            </div>
+            <p><strong>🚆 台鐵電車：</strong>搭乘至「鶯歌火車站」下車，由建國路出口出站，沿中正三路接中正四路直行約 8 分鐘。</p>
+            <p><strong>🚗 自行開車：</strong>行經國道 3 號三峽/鶯歌交流道下，往鶯歌方向行駛約 7 分鐘即達，周邊備有多處收費停車場。</p>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Map Card -->
+        <div class="lg:col-span-6">
+          <div class="bg-charcoal-900 border border-stone-800 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
+            
+            <div class="relative w-full h-[380px] rounded-2xl overflow-hidden border border-stone-700">
+              <!-- Stylized Dark Map Preview -->
+              <iframe 
+                class="w-full h-full filter invert-[0.92] hue-rotate-180 contrast-125" 
+                src="https://maps.google.com/maps?q=新北市鶯歌區中正四路1號&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0"
+                title="焰牛排館地圖定位">
+              </iframe>
+              
+              <!-- Map Location Overlay Badge -->
+              <div class="absolute bottom-4 left-4 right-4 bg-charcoal-950/95 backdrop-blur-md p-4 rounded-xl border border-flame-500/40 flex items-center justify-between shadow-flame">
+                <div>
+                  <div class="font-serif font-black text-white text-sm">焰牛排館 (鶯歌總店)</div>
+                  <div class="text-[11px] text-stone-400">新北市鶯歌區中正四路1號</div>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=新北市鶯歌區中正四路1號" target="_blank" rel="noopener noreferrer" 
+                   class="px-3 py-1.5 bg-flame-600 hover:bg-flame-500 text-charcoal-950 font-bold text-xs rounded-lg transition-colors flex items-center gap-1">
+                  <span>Google 地圖導航</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between text-xs text-stone-400 px-2">
+              <span class="flex items-center gap-1">
+                <i data-lucide="car" class="w-3.5 h-3.5 text-flame-400"></i>
+                周邊 300 公尺備有公有特約停車格
+              </span>
+              <span class="text-amberGold-400 font-semibold">
+                歡迎蒞臨
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-charcoal-950 border-t border-stone-850 py-12 text-stone-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-stone-800">
+        
+        <!-- Logo Brand in Footer -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-flame-600 flex items-center justify-center shadow-flame">
+            <i data-lucide="flame" class="w-6 h-6 text-charcoal-950 fill-charcoal-950"></i>
+          </div>
+          <div>
+            <div class="font-serif font-black text-xl text-white">焰牛排館 <span class="text-xs font-brand text-flame-400 uppercase tracking-widest font-normal">Flame Steakhouse</span></div>
+            <div class="text-xs text-stone-400">「焰火炙燒好滋味，一口牛排，滿滿幸福。」</div>
+          </div>
+        </div>
+
+        <!-- Quick Links in Footer -->
+        <div class="flex flex-wrap justify-center gap-6 text-xs text-stone-300">
+          <a href="#about" class="hover:text-flame-400 transition-colors">關於我們</a>
+          <a href="#signature" class="hover:text-flame-400 transition-colors">精選牛排</a>
+          <a href="#menu" class="hover:text-flame-400 transition-colors">全品項菜單</a>
+          <a href="#pricing" class="hover:text-flame-400 transition-colors">消費方式</a>
+          <a href="#mascots" class="hover:text-flame-400 transition-colors">人氣吉祥物</a>
+          <a href="#reservation" class="hover:text-flame-400 transition-colors">線上預約</a>
+          <a href="#contact" class="hover:text-flame-400 transition-colors">門市交通</a>
+        </div>
+
+        <!-- Phone button -->
+        <a href="tel:02-1234-5678" class="text-xs font-bold text-amberGold-400 bg-amberGold-500/10 px-4 py-2 rounded-lg border border-amberGold-500/20 hover:bg-amberGold-500/20 transition-colors flex items-center gap-2">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>02-1234-5678</span>
+        </a>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+        <div>
+          © 2026 焰牛排館 (FLAME STEAKHOUSE). 版權所有．新北市鶯歌區中正四路 1 號
+        </div>
+        <div class="flex items-center gap-4">
+          <span>營業時間：週二至週日 11:00 - 21:00 (週一公休)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING MASCOT BUTTON ==================== -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
+    
+    <!-- Bubble Message -->
+    <div id="floatingBubble" class="bg-charcoal-900 border border-flame-500/50 shadow-flame px-4 py-2.5 rounded-2xl text-xs text-stone-200 max-w-[220px] transition-all duration-300 animate-bounce">
+      <div class="font-bold text-flame-400 flex items-center gap-1 mb-0.5">
+        <span>飯糰 & 豬排說：</span>
+      </div>
+      <p id="bubbleQuoteText">肚子餓了嗎？快來線上預約吃牛排吧！🥩</p>
+    </div>
+
+    <!-- Toggle / Click Button -->
+    <button onclick="triggerFloatingMascot()" class="w-14 h-14 rounded-full bg-gradient-to-r from-flame-600 to-amberGold-500 text-charcoal-950 p-2 shadow-flame-lg hover:scale-110 active:scale-95 transition-transform flex items-center justify-center border-2 border-amberGold-300" title="點我跟吉祥物互動">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <!-- Cute mini mascot face -->
+        <circle cx="50" cy="50" r="45" fill="#ffffff" />
+        <ellipse cx="32" cy="52" rx="4" ry="3" fill="#fca5a5" />
+        <ellipse cx="68" cy="52" rx="4" ry="3" fill="#fca5a5" />
+        <circle cx="38" cy="46" r="3.5" fill="#1e293b" />
+        <circle cx="62" cy="46" r="3.5" fill="#1e293b" />
+        <path d="M44 56 Q50 63 56 56" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        <path d="M48 10 C48 4, 56 4, 54 12 C58 8, 56 16, 50 18 Z" fill="#ea580c" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ==================== RESERVATION SUCCESS / PASS MODAL ==================== -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-charcoal-950/80 modal-backdrop">
+    <div class="bg-charcoal-900 border border-flame-500 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-flame-lg relative animate-in fade-in zoom-in duration-200">
+      
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white p-2 rounded-lg bg-stone-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3 border border-emerald-500/30">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+        <span class="text-xs uppercase font-bold text-flame-400 tracking-wider">RESERVATION CONFIRMED</span>
+        <h3 class="text-2xl font-serif font-black text-white mt-1">恭喜您！訂位已成功受理</h3>
+        <p class="text-stone-400 text-xs mt-1">我們已將您的預約記錄妥善儲存，期待您的蒞臨！</p>
+      </div>
+
+      <!-- Ticket Card -->
+      <div id="ticketCard" class="bg-charcoal-950 border border-stone-800 rounded-2xl p-5 mb-6 space-y-3 font-mono text-xs">
+        <div class="flex justify-between items-center pb-3 border-b border-stone-800">
+          <span class="text-stone-400">訂位代碼 (Code)</span>
+          <span id="ticketCode" class="text-amberGold-400 font-bold text-sm tracking-wider">FLM-202610-8832</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-400">預約貴賓：</span>
+          <span id="ticketName" class="text-white font-sans font-medium">王大明 先生</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-400">用餐日期：</span>
+          <span id="ticketDate" class="text-white font-medium">2026-10-15</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-400">用餐時段：</span>
+          <span id="ticketTime" class="text-white font-medium">18:30</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-400">用餐人數：</span>
+          <span id="ticketGuests" class="text-white font-medium">2 位</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-400">聯絡電話：</span>
+          <span id="ticketPhone" class="text-white font-medium">0912-345-678</span>
+        </div>
+        <div class="flex justify-between pt-2 border-t border-stone-850">
+          <span class="text-stone-400">門市地點：</span>
+          <span class="text-stone-300 font-sans">新北市鶯歌區中正四路1號</span>
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <button onclick="window.print()" class="flex-1 py-3 bg-stone-800 hover:bg-stone-700 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+          <i data-lucide="printer" class="w-4 h-4"></i>
+          <span>列印/截圖留存</span>
+        </button>
+        <button onclick="closeBookingModal()" class="flex-1 py-3 bg-flame-600 hover:bg-flame-500 text-charcoal-950 rounded-xl text-xs font-black tracking-wider transition-colors shadow-flame">
+          完成
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DISH DETAIL MODAL ==================== -->
+  <div id="dishModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-charcoal-950/80 modal-backdrop">
+    <div class="bg-charcoal-900 border border-stone-700 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      
+      <button onclick="closeDishModal()" class="absolute top-4 right-4 z-10 text-white p-2 rounded-full bg-charcoal-950/80 hover:bg-flame-600 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="relative h-64 sm:h-72">
+        <img id="dishModalImg" src="" alt="Dish Detail" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-6 right-6">
+          <span id="dishModalBadge" class="inline-block px-3 py-1 bg-flame-600 text-charcoal-950 text-xs font-black rounded-md mb-1">精選推薦</span>
+          <h3 id="dishModalTitle" class="text-2xl sm:text-3xl font-serif font-black text-white">餐點名稱</h3>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-stone-800">
+          <span id="dishModalPrice" class="text-2xl font-serif font-bold text-amberGold-400">NT$ 580</span>
+          <span id="dishModalDoneness" class="text-xs text-stone-300 bg-stone-800 px-3 py-1 rounded-full border border-stone-700">建議熟度：5 分熟</span>
+        </div>
+
+        <p id="dishModalDesc" class="text-stone-300 text-sm leading-relaxed">
+          詳細介紹...
+        </p>
+
+        <div class="bg-charcoal-950 p-4 rounded-xl border border-stone-800 space-y-2 text-xs">
+          <div class="flex justify-between">
+            <span class="text-stone-400">搭配副餐：</span>
+            <span class="text-stone-200">每日現烤大蒜麵包、主廚特調黑胡椒醬/蘑菇紅酒醬</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-stone-400">套餐加購：</span>
+            <span class="text-amberGold-400 font-semibold">+120元升級A餐 / +180元升級B豪華全餐</span>
+          </div>
+        </div>
+
+        <div class="pt-2 flex gap-3">
+          <a href="#reservation" onclick="closeDishModal()" class="flex-1 py-3 bg-gradient-to-r from-flame-600 to-amberGold-500 text-charcoal-950 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-flame hover:scale-[1.01] transition-transform">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>預約品嚐這道美味</span>
+          </a>
+          <button onclick="closeDishModal()" class="px-5 py-3 bg-stone-800 hover:bg-stone-700 text-stone-300 rounded-xl text-xs font-semibold transition-colors">
+            關閉
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== BOOKING LOOKUP MODAL ==================== -->
+  <div id="bookingLookupModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-charcoal-950/80 modal-backdrop">
+    <div class="bg-charcoal-900 border border-stone-700 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      
+      <button onclick="closeBookingLookupModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white p-2 rounded-lg bg-stone-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-xl bg-flame-500/20 text-flame-400 flex items-center justify-center">
+          <i data-lucide="search" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-black text-white">查詢／管理我的預約訂位</h3>
+          <p class="text-xs text-stone-400">查看您在本裝置上的即時預約紀錄</p>
+        </div>
+      </div>
+
+      <div id="bookingListContainer" class="space-y-3 max-h-72 overflow-y-auto pr-1">
+        <!-- Javascript renders bookings here -->
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-stone-800 flex justify-end">
+        <button onclick="closeBookingLookupModal()" class="px-5 py-2.5 bg-stone-800 hover:bg-stone-700 text-stone-300 rounded-xl text-xs font-semibold">
+          關閉視窗
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initDateInputConstraint();
+      renderMenu('all');
+    });
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Set Min Date constraint to Today and Max Date to 30 days ahead
+    function initDateInputConstraint() {
+      const dateInput = document.getElementById('bookDate');
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+      // Max 30 days
+      const maxDate = new Date();
+      maxDate.setDate(today.getDate() + 30);
+      const maxYyyy = maxDate.getFullYear();
+      const maxMm = String(maxDate.getMonth() + 1).padStart(2, '0');
+      const maxDd = String(maxDate.getDate()).padStart(2, '0');
+      dateInput.max = `${maxYyyy}-${maxMm}-${maxDd}`;
+      dateInput.value = `${yyyy}-${mm}-${dd}`;
+    }
+
+    // ==================== DISH DATABASE & MODAL ====================
+    const dishData = {
+      sirloin: {
+        title: "炙烤沙朗牛排 (Sirloin Steak)",
+        price: "NT$ 580",
+        doneness: "推薦 5 分熟 (Medium)",
+        badge: "人氣經典 NO.1",
+        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80",
+        desc: "嚴選背脊部沙朗原塊厚切，油花如大理石般細緻勻稱。經過高溫炭火瞬間炙烤，肉汁封存於緊緻肌理中，搭配特製現磨黑胡椒與海鹽，每一口都能感受經典牛排的豐厚焦香與極致肉感。"
+      },
+      filet: {
+        title: "厚切菲力牛排 (Filet Mignon)",
+        price: "NT$ 720",
+        doneness: "推薦 3~5 分熟 (Medium-Rare)",
+        badge: "主廚嚴選頂級",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
+        desc: "取自牛隻最柔軟少動的腰內肉，整頭牛僅佔極少比例。肉質質地細密如天鵝絨，幾乎不帶多餘油脂，入口極致軟嫩、多汁溫潤，是追求最高肉質享受客人的極上之選。"
+      },
+      pork: {
+        title: "香煎豬排 (Pan-seared Pork Chop)",
+        price: "NT$ 420",
+        doneness: "全熟香煎 (Well-Done)",
+        badge: "人氣排餐",
+        img: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=1200&q=80",
+        desc: "嚴選上等厚切優質梅花豬排，外層在熱鍋中煎至金黃微脆，逼出迷人油香，內部肉質仍保持粉潤鮮嫩多汁，口感彈牙不乾柴，佐以特製洋蔥紅酒醬，香氣濃郁令人垂涎。"
+      },
+      combo: {
+        title: "牛排雙拼套餐 (Steak & Pork Combo)",
+        price: "NT$ 680",
+        doneness: "牛 5分熟 / 豬 全熟",
+        badge: "雙重享受超值推",
+        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80",
+        desc: "無法割捨牛排的濃郁焦香又想品嚐豬排的酥脆鮮甜？牛排雙拼套餐一次滿足兩種願望！內含 6oz 炭烤沙朗牛排與 6oz 香煎豬排，更附上現炸金黃酥脆薯條、田園爽口沙拉與特調飲品，飽足感十足。"
+      }
+    };
+
+    function openDishDetail(key) {
+      const dish = dishData[key];
+      if (!dish) return;
+      document.getElementById('dishModalTitle').innerText = dish.title;
+      document.getElementById('dishModalPrice').innerText = dish.price;
+      document.getElementById('dishModalDoneness').innerText = dish.doneness;
+      document.getElementById('dishModalBadge').innerText = dish.badge;
+      document.getElementById('dishModalImg').src = dish.img;
+      document.getElementById('dishModalDesc').innerText = dish.desc;
+      document.getElementById('dishModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeDishModal() {
+      document.getElementById('dishModal').classList.add('hidden');
+    }
+
+    // ==================== FULL MENU DATA & FILTERING ====================
+    const menuItems = [
+      // Steaks
+      {
+        id: 1,
+        cat: 'steak',
+        name: '炙烤沙朗牛排 (9 oz)',
+        price: 'NT$ 580',
+        tag: '經典人氣',
+        desc: '肉質鮮嫩多汁，油花勻稱，大火炙燒封鎖甘甜肉汁。',
+        img: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 2,
+        cat: 'steak',
+        name: '厚切菲力牛排 (8 oz)',
+        price: 'NT$ 720',
+        tag: '極致柔嫩',
+        desc: '牛腰內肉極致細密滑嫩，入口即化，高品質客人首選。',
+        img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 3,
+        cat: 'steak',
+        name: '熟成黑牛肋眼牛排 (10 oz)',
+        price: 'NT$ 880',
+        tag: '老饕推薦',
+        desc: '中心帶迷人油花油脂筋，高溫火烤香氣四溢，脂香豐潤。',
+        img: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 4,
+        cat: 'steak',
+        name: '蒜香炙烤翼板牛排 (8 oz)',
+        price: 'NT$ 520',
+        tag: '香醇微嚼',
+        desc: '特製生蒜奶油爆香，肉質油花適中、肉感厚實扎實。',
+        img: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80'
+      },
+      // Pork
+      {
+        id: 5,
+        cat: 'pork',
+        name: '香煎梅花厚切豬排 (9 oz)',
+        price: 'NT$ 420',
+        tag: '招牌豬排',
+        desc: '外微脆金黃、內部鮮嫩多汁，佐特製香濃蘑菇醬。',
+        img: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 6,
+        cat: 'pork',
+        name: '焰火牛排雙拼套餐 (12 oz)',
+        price: 'NT$ 680',
+        tag: '雙重滿足',
+        desc: '牛排 + 豬排一次享用，搭配薯條、沙拉與冰涼特調。',
+        img: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 7,
+        cat: 'pork',
+        name: '脆皮迷迭香煎雞腿排',
+        price: 'NT$ 380',
+        tag: '金黃脆皮',
+        desc: '新鮮去骨大雞腿排，迷迭香料醃製，皮脆肉嫩多汁。',
+        img: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80'
+      },
+      // Pasta
+      {
+        id: 8,
+        cat: 'pasta',
+        name: '黑松露野菇奶油義大利麵',
+        price: 'NT$ 320',
+        tag: '濃郁奶香',
+        desc: '義大利進口頂級黑松露醬，搭配多種鮮菇與帕瑪森乳酪。',
+        img: 'https://images.unsplash.com/photo-1621996346565-e3d5d6281724?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 9,
+        cat: 'pasta',
+        name: '蒜辣炙烤海鮮義大利麵',
+        price: 'NT$ 360',
+        tag: '鮮美爽口',
+        desc: '鮮蝦、蛤蜊、透抽直火快炒，蒜辣提鮮，麵體 Q 彈入味。',
+        img: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 10,
+        cat: 'pasta',
+        name: '慢燉波隆那牛肉肉醬麵',
+        price: 'NT$ 290',
+        tag: '經典家常',
+        desc: '嚴選牛肉慢火熬燉 6 小時紅醬，酸甜濃郁回甘。',
+        img: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'
+      },
+      // Drinks
+      {
+        id: 11,
+        cat: 'drink',
+        name: '焰火特調冰釀水果茶',
+        price: 'NT$ 120',
+        tag: '清爽解膩',
+        desc: '百香果、鳳梨、蘋果慢熬果醬基底，清爽解油膩。',
+        img: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 12,
+        cat: 'drink',
+        name: '高山炭焙烏龍冷泡茶',
+        price: 'NT$ 90',
+        tag: '茶香甘醇',
+        desc: '嚴選台灣手採高山茶葉低溫冷泡，甘醇不苦澀。',
+        img: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 13,
+        cat: 'drink',
+        name: '主廚精選佐餐紅葡萄酒 (單杯)',
+        price: 'NT$ 180',
+        tag: '牛排良伴',
+        desc: '單寧柔順、果香豐沛，完美襯托牛排的炙燒炭火香氣。',
+        img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80'
+      },
+      // Desserts
+      {
+        id: 14,
+        cat: 'dessert',
+        name: '吉祥物特製焦糖烤布蕾',
+        price: 'NT$ 110',
+        tag: '人氣甜點',
+        desc: '現烤香脆焦糖薄片，包覆香濃滑順馬達加斯加香草籽布丁。',
+        img: 'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 15,
+        cat: 'dessert',
+        name: '義式經典特濃提拉米蘇',
+        price: 'NT$ 130',
+        tag: '微苦酒香',
+        desc: '手作手指餅乾浸潤濃縮咖啡與咖啡酒，搭配馬斯卡彭起司。',
+        img: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        id: 16,
+        cat: 'dessert',
+        name: '炙燒熔岩布朗尼佐冰淇淋',
+        price: 'NT$ 150',
+        tag: '冰火交融',
+        desc: '溫熱濃郁黑巧克力熔岩，佐上頂級香草冰淇淋，冰火交融。',
+        img: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80'
+      }
+    ];
+
+    function filterMenu(category) {
+      // Update tab buttons style
+      const buttons = document.querySelectorAll('.menu-tab-btn');
+      buttons.forEach(btn => {
+        if (btn.dataset.cat === category) {
+          btn.className = "menu-tab-btn active px-5 py-2.5 rounded-xl font-bold text-sm transition-all whitespace-nowrap bg-flame-600 text-charcoal-950 shadow-flame";
+        } else {
+          btn.className = "menu-tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap bg-charcoal-800 text-stone-300 hover:text-white hover:bg-charcoal-700 border border-stone-700";
+        }
+      });
+
+      renderMenu(category);
+    }
+
+    function renderMenu(category) {
+      const container = document.getElementById('menuGrid');
+      const filtered = category === 'all' 
+        ? menuItems 
+        : menuItems.filter(item => item.cat === category);
+
+      container.innerHTML = filtered.map(item => `
+        <div class="bg-charcoal-950 border border-stone-800 rounded-2xl overflow-hidden hover:border-flame-500/50 transition-all duration-300 group hover:shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 overflow-hidden">
+              <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 left-2.5 bg-stone-900/90 text-amberGold-400 border border-amberGold-500/30 text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                ${item.tag}
+              </span>
+            </div>
+            <div class="p-5">
+              <div class="flex items-baseline justify-between mb-1.5">
+                <h4 class="font-serif font-bold text-white text-base group-hover:text-flame-400 transition-colors">
+                  ${item.name}
+                </h4>
+                <span class="font-serif font-bold text-flame-400 text-base">${item.price}</span>
+              </div>
+              <p class="text-stone-400 text-xs leading-relaxed">
+                ${item.desc}
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-0">
+            <a href="#reservation" class="block w-full text-center py-2 bg-stone-900 hover:bg-flame-600 text-stone-300 hover:text-charcoal-950 rounded-lg text-xs font-semibold transition-colors border border-stone-800">
+              預約點餐
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // ==================== ONLINE RESERVATION LOGIC ====================
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('bookName').value.trim();
+      const phone = document.getElementById('bookPhone').value.trim();
+      const date = document.getElementById('bookDate').value;
+      const time = document.getElementById('bookTime').value;
+      const guests = document.getElementById('bookGuests').value;
+      const purpose = document.getElementById('bookPurpose').value;
+      const email = document.getElementById('bookEmail').value.trim();
+      const notes = document.getElementById('bookNotes').value.trim();
+
+      if (!date || !time || !name || !phone) {
+        alert("請確認所有必填欄位（日期、時間、姓名、電話）皆已完整填寫！");
+        return;
+      }
+
+      // Generate random unique booking code
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const bookingCode = `FLM-${date.replace(/-/g, '').slice(2)}-${randomNum}`;
+
+      const newBooking = {
+        code: bookingCode,
+        name,
+        phone,
+        date,
+        time,
+        guests,
+        purpose,
+        email,
+        notes,
+        createdAt: new Date().toLocaleString()
+      };
+
+      // Save to localStorage
+      saveBookingToStorage(newBooking);
+
+      // Populate Ticket Card
+      document.getElementById('ticketCode').innerText = bookingCode;
+      document.getElementById('ticketName').innerText = `${name} 貴賓`;
+      document.getElementById('ticketDate').innerText = date;
+      document.getElementById('ticketTime').innerText = `${time} (${purpose})`;
+      document.getElementById('ticketGuests').innerText = `${guests} 位`;
+      document.getElementById('ticketPhone').innerText = phone;
+
+      // Show Success Modal
+      document.getElementById('bookingModal').classList.remove('hidden');
+      lucide.createIcons();
+
+      // Reset form
+      document.getElementById('bookingForm').reset();
+      initDateInputConstraint();
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function saveBookingToStorage(booking) {
+      let bookings = [];
+      try {
+        const stored = localStorage.getItem('flame_steakhouse_bookings');
+        if (stored) {
+          bookings = JSON.parse(stored);
+        }
+      } catch (err) {
+        bookings = [];
+      }
+      bookings.unshift(booking);
+      localStorage.setItem('flame_steakhouse_bookings', JSON.stringify(bookings));
+    }
+
+    function openBookingLookupModal() {
+      const modal = document.getElementById('bookingLookupModal');
+      const container = document.getElementById('bookingListContainer');
+      
+      let bookings = [];
+      try {
+        const stored = localStorage.getItem('flame_steakhouse_bookings');
+        if (stored) bookings = JSON.parse(stored);
+      } catch (e) {
+        bookings = [];
+      }
+
+      if (bookings.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-stone-400">
+            <i data-lucide="calendar-x" class="w-10 h-10 mx-auto text-stone-600 mb-2"></i>
+            <p class="text-sm">目前尚無預約訂位記錄</p>
+            <p class="text-xs text-stone-500 mt-1">歡迎前往預約區填寫訂位表單！</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = bookings.map((b, idx) => `
+          <div class="p-4 bg-charcoal-950 border border-stone-800 rounded-xl relative group">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-850">
+              <span class="text-amberGold-400 font-mono font-bold text-xs">${b.code}</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">預約已確認</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-2 text-xs">
+              <div><span class="text-stone-400">貴賓：</span> <span class="text-white">${b.name}</span></div>
+              <div><span class="text-stone-400">人數：</span> <span class="text-white">${b.guests} 位</span></div>
+              <div><span class="text-stone-400">日期：</span> <span class="text-stone-200">${b.date}</span></div>
+              <div><span class="text-stone-400">時間：</span> <span class="text-stone-200">${b.time}</span></div>
+            </div>
+            <div class="mt-3 pt-2 border-t border-stone-850 flex justify-end">
+              <button onclick="deleteBooking(${idx})" class="text-xs text-rose-400 hover:text-rose-300 flex items-center gap-1">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                <span>取消此筆預約</span>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeBookingLookupModal() {
+      document.getElementById('bookingLookupModal').classList.add('hidden');
+    }
+
+    function deleteBooking(index) {
+      if (confirm("確定要取消這筆訂位嗎？取消後需重新預約。")) {
+        try {
+          let bookings = JSON.parse(localStorage.getItem('flame_steakhouse_bookings') || '[]');
+          bookings.splice(index, 1);
+          localStorage.setItem('flame_steakhouse_bookings', JSON.stringify(bookings));
+          openBookingLookupModal(); // Refresh view
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+
+    // ==================== FAQ ACCORDION ====================
+    function toggleFaq(id) {
+      const content = document.getElementById(`faqContent-${id}`);
+      const icon = document.getElementById(`faqIcon-${id}`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // ==================== MASCOT INTERACTION ====================
+    const onigiriQuotes = [
+      "歡迎光臨焰牛排館！今天推薦軟嫩多汁的菲力牛排喔～",
+      "炭火高溫炙燒才能把肉汁緊緊鎖住，每一口都超幸福！",
+      "記得先線上預約訂位，這樣來店裡就不用排隊候位囉！",
+      "壽星記得提早跟我們說，飯糰會幫你準備小驚喜唷！🍙",
+      "「焰火炙燒好滋味，一口牛排，滿滿幸福！」這是我們的座右銘！"
+    ];
+
+    const tonkatsuQuotes = [
+      "想吃牛排又想吃豬排嗎？點雙拼套餐就能一口滿足唷！",
+      "我們的香煎豬排外酥內嫩，沾上特製磨菇醬真的超絕配！",
+      "酥炸脆薯沾松露醬簡直人間美味，一定要升級 B 套餐！🥩",
+      "吃完排餐再來一份焦糖烤布蕾，幸福感直接破表～",
+      "不管是跟喜歡的人約會還是全家聚餐，我們都超歡迎喔！"
+    ];
+
+    function randomMascotQuote(mascot) {
+      if (mascot === 'onigiri') {
+        const quote = onigiriQuotes[Math.floor(Math.random() * onigiriQuotes.length)];
+        document.getElementById('onigiriText').innerText = quote;
+      } else if (mascot === 'tonkatsu') {
+        const quote = tonkatsuQuotes[Math.floor(Math.random() * tonkatsuQuotes.length)];
+        document.getElementById('tonkatsuText').innerText = quote;
+      }
+    }
+
+    function triggerFloatingMascot() {
+      const bubble = document.getElementById('floatingBubble');
+      const textElem = document.getElementById('bubbleQuoteText');
+      const allQuotes = [...onigiriQuotes, ...tonkatsuQuotes];
+      const randomQuote = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+      textElem.innerText = randomQuote;
+      
+      // Temporarily wiggle
+      bubble.classList.remove('animate-bounce');
+      void bubble.offsetWidth;
+      bubble.classList.add('animate-bounce');
+    }
+  </script>
+</body>
+</html>
+
